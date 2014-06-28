@@ -1,6 +1,6 @@
 # RubyHashcat
 
-TODO: Write a gem description
+Ruby wrapper created to run oclHashcat cracking jobs from inside of ruby. Initially created to integrate with a Rest API.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Check out the test folder to see some examples of running a crack job.
 
 ## Contributing
 
