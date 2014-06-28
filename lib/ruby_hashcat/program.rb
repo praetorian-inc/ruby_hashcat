@@ -1,9 +1,6 @@
 require 'rprogram/program'
 
 module RubyHashcat
-  #
-  # Represents the `rhashcat` program.
-  #
   class Program < RProgram::Program
 
     # Add a top-level method which finds and runs the program.

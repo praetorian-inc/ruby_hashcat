@@ -1,5 +1,3 @@
-require "ruby_hashcat/version"
-
-module RubyHashcat
-  # Your code goes here...
-end
+require 'ruby_hashcat/program'
+require 'ruby_hashcat/task'
+require 'ruby_hashcat/version'
