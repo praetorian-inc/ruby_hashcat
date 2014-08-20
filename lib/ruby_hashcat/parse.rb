@@ -1,5 +1,5 @@
 path = File.dirname(__FILE__)
-require "#{path}/file"
+require "#{path}/tools"
 module RubyHashcat
   module Parse
       def self.stdout(file)
