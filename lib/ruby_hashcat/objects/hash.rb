@@ -9,6 +9,7 @@ module RubyHashcat
         raise RubyHashcat::Objects::Hash::HashIDAlreadyExists if File.exists?("#{path}/../tmp/#{@id}_output.txt") or File.exists?("#{path}/../tmp/#{@id}_errors.txt")
         @id = id
         @path = File.dirname(path)
+        @ocl = path
       end
 
       def crack(async=false)
@@ -25,7 +26,7 @@ module RubyHashcat
           # Create PID file for this hash ID
           File.touch("#{path}/../tmp/.hashcat_#{@id}_pid")
 
-          worker = RubyHashcat::Program.new(@path)
+          worker = RubyHashcat::Program.new(@ocl)
 
           # Validate Input
           worker.crack do |crack|

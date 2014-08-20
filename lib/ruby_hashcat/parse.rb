@@ -3,6 +3,7 @@ require "#{path}/tools"
 module RubyHashcat
   module Parse
       def self.stdout(file)
+        return [] unless File.exists?(file)
         array = []
         placement = -1
         string = File.tail(file, 30)
