@@ -14,7 +14,7 @@ module RubyHashcat
       def crack(async=false)
         # Check if async
         if async
-          RubyHashcat::Objects::Hash::Async.crack(self)
+          RubyHashcat::Objects::Hash::Async.new.async.crack(self)
         else
           path = File.dirname(__FILE__)
 
