@@ -74,7 +74,16 @@ module RubyHashcat
         end
       end
 
+      def clean
+        path = File.dirname(__FILE__)
+        File.delete("#{path}/../tmp/.hashcat_#{@id}_pid") if File.exists("#{path}/../tmp/.hashcat_#{@id}_pid")
+        File.delete("#{path}/../tmp/#{@id}_output.txt") if File.exists("#{path}/../tmp/#{@id}_output.txt")
+        File.delete("#{path}/../tmp/#{@id}_errors.txt") if File.exists("#{path}/../tmp/#{@id}_errors.txt")
+        File.delete("#{path}/../tmp/#{@id}.crack") if File.exists?("#{path}/../tmp/#{@id}.crack")
+      end
+
       def status
+        path = File.dirname(__FILE__)
         arr = RubyHashcat::Parse.stdout("#{path}/../tmp/#{@id}_output.txt")[-1]
         err = File.read("#{path}/../tmp/#{@id}_errors.txt").chomp.strip
         {:data => arr, :errors => err}
