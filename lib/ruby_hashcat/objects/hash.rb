@@ -40,6 +40,11 @@ module RubyHashcat
             crack.status = true
             crack.status_timer = 30
 
+            # Rules
+            if @rule
+              crack.rules = @rule
+            end
+
             # Runtime limit
             if @runtime
               crack.runtime = @runtime
@@ -142,15 +147,15 @@ module RubyHashcat
 
       def rules=(value)
         list = Dir.entries("#{@path}/rules/")
+        @rule = []
         if value.is_a? Array
           raise RubyHashcat::Objects::Hash::InvalidRule unless (value - list).empty?
-          @rule == []
           value.each do |x|
             @rule << "#{@path}/rules/#{x}"
           end
         else
           raise RubyHashcat::Objects::Hash::InvalidRule unless list.include?(value)
-          @rule = "#{@path}/rules/#{value}"
+          @rule << "#{@path}/rules/#{value}"
         end
       end
 
