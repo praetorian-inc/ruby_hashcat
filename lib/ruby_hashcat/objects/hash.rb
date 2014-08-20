@@ -30,8 +30,15 @@ module RubyHashcat
 
           # Validate Input
           worker.crack do |crack|
+
+            # Hash Type
+            crack.hash_type = @type
             # Output
             crack.outfile = "#{path}/../tmp/#{@id}.crack"
+            crack.outfile_format = 5
+            # Status Output
+            crack.status = true
+            crack.status_timer = 30
 
             # Runtime limit
             if @runtime
@@ -43,33 +50,33 @@ module RubyHashcat
               crack.username = true
             end
 
+            crack.attack_mode = @attack
+
+            crack.hash = @hash
+
             # Attack modes
             if @attack == 3 # Bruteforce/Mask
               # Check if charset exists
               raise RubyHashcat::Objects::Hash::InvalidMaskAttack unless @charset
-              crack.attack_mode = @attack
               crack.charset = @charset
             elsif @attack == 0 # Dictionary
-              crack.attack_mode = @attack
               crack.wordlist = @word_list
             elsif @attack == 1 # Combination
-              crack.attack_mode = @attack
               # Check if there are 2 word lists for combination attack
               raise RubyHashcat::Objects::Hash::InvalidCombinationAttack unless @word_list.count == 2
               crack.wordlist = @word_list
             elsif @attack == 7 or @attack == 6 # Hybrid dictionary & mask
               # Check if a word list and charset exist
               raise RubyHashcat::Objects::Hash::InvalidHybridAttack unless @word_list and @charset
-              crack.attack_mode = @attack
-              crack.charset = @charset
-              crack.wordlist = @word_list
+              if @char_word
+                crack.charset = @charset
+                crack.wordlist = @word_list
+              else
+                crack.wordlist = @word_list
+                crack.charset = @charset
+              end
             end
 
-            crack.outfile_format = 5
-            crack.hash_type = @type
-            crack.hash = @hash
-            crack.status = true
-            crack.status_timer = 30
           end
 
           File.delete("#{path}/../tmp/.hashcat_#{@id}_pid") if File.exists?("#{path}/../tmp/.hashcat_#{@id}_pid")
@@ -127,6 +134,10 @@ module RubyHashcat
       def attack=(value)
         raise RubyHashcat::Objects::Hash::InvalidAttack unless value.is_a? Integer and [0,1,3,6,7].include?(value)
         @attack = value
+      end
+
+      def char_word=(value)
+        @char_word = !!value
       end
 
       def rules=(value)
