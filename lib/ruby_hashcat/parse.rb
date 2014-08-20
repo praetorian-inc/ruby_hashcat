@@ -77,7 +77,7 @@ module RubyHashcat
         File.open(file).each_line do |x|
           split = x.split(':')
           plain = self.hex_to_bin(split[-1])
-          split.delete[-1]
+          split.delete_at(-1)
           hash = split.join(':')
           arr << {:hash => hash, :plain => plain}
         end

@@ -6,7 +6,6 @@ module RubyHashcat
       def initialize(id, path)
         raise RubyHashcat::Objects::Hash::InvalidHashId unless id.is_a? Integer
         raise RubyHashcat::Objects::Hash::InvalidHashCatLocation unless Dir.exists?(File.dirname(path))
-        raise RubyHashcat::Objects::Hash::HashIDAlreadyExists if File.exists?("#{path}/../tmp/#{@id}_output.txt") or File.exists?("#{path}/../tmp/#{@id}_errors.txt")
         @id = id
         @path = File.dirname(path)
         @ocl = path
@@ -39,6 +38,10 @@ module RubyHashcat
             # Status Output
             crack.status = true
             crack.status_timer = 30
+
+            # Disable Restore and Pot File (not needed)
+            crack.disable_restore = true
+            crack.disable_potfile = true
 
             # Rules
             if @rule
