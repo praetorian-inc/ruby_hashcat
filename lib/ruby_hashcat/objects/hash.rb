@@ -213,7 +213,7 @@ module RubyHashcat
       end
 
       class Async
-        include SuckerPunch::Job
+        include ::SuckerPunch::Job
         workers 3
 
         def crack(obj)
