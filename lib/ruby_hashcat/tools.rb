@@ -28,6 +28,7 @@ class File
 
   def self.tail(file, num=10)
     arr = []
+    return arr unless File.exists?(file)
     File.open(file) do |x|
       arr = x.tail(num)
     end
