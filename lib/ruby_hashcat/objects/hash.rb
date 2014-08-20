@@ -1,3 +1,4 @@
+require 'sucker_punch'
 module RubyHashcat
   module Objects
     class Hash
