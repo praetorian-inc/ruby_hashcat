@@ -119,8 +119,8 @@ module RubyHashcat
       end
 
       def rules=(value)
+        list = Dir.entries("#{@path}/rules/")
         if value.is_a? Array
-          list = Dir.entries("#{@path}/rules/")
           raise RubyHashcat::Objects::Hash::InvalidRule unless (value - list).empty?
           @rule == []
           value.each do |x|
