@@ -1,3 +1,4 @@
+require 'ruby_hashcat/objects/init'
 require 'ruby_hashcat/api'
 require 'ruby_hashcat/parse'
 require 'ruby_hashcat/program'
