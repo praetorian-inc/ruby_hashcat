@@ -13,8 +13,8 @@ File.delete("#{path}/md5crypt.crack") if File.exists?("#{path}/md5crypt.crack")
 worker.crack do |crack|
   crack.outfile = "#{path}/md5.crack"
   crack.quiet = true
-  crack.restore_disable = true
-  crack.potfile_disable = true
+  crack.disable_restore = true
+  crack.disable_potfile = true
   crack.runtime = 15
   crack.markov_threshold = 32
   crack.attack_mode = 7
@@ -26,8 +26,8 @@ end
 # cudaExample400.sh
 worker.crack do |crack|
   crack.quiet = true
-  crack.restore_disable = true
-  crack.potfile_disable = true
+  crack.disable_restore = true
+  crack.disable_potfile = true
   crack.runtime = 15
   crack.hash_type = 400
   crack.outfile = "#{path}/phpass.crack"
@@ -38,8 +38,8 @@ end
 # cudaExample500.sh
 worker.crack do |crack|
   crack.quiet = true
-  crack.restore_disable = true
-  crack.potfile_disable = true
+  crack.disable_restore = true
+  crack.disable_potfile = true
   crack.hash_type = 500
   crack.runtime = 30
   crack.outfile = "#{path}/md5crypt.crack"
@@ -50,8 +50,8 @@ end
 # Custom Cracking
 worker.crack do |crack|
   crack.quiet = true
-  crack.restore_disable = true
-  crack.potfile_disable = true
+  crack.disable_restore = true
+  crack.disable_potfile = true
   crack.runtime = 120
   crack.rules = ["#{path}/rules/best64.rule", "#{path}/rules/InsidePro-PasswordsPro.rule"]
   crack.hash_type = 0

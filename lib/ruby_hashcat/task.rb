@@ -33,7 +33,7 @@ module RubyHashcat
     long_option :flag => '--runtime', :equals => true, :name => :runtime
     long_option :flag => '--session', :equals => true, :name => :session_name
     long_option :flag => '--restore', :name => :restore
-    long_option :flag => '--restore-disable', :name => :restore_disable
+    long_option :flag => '--disable-restore', :name => :disable_restore
 
     # Files:
     short_option :flag => '-o', :name => :outfile
@@ -46,7 +46,7 @@ module RubyHashcat
     long_option :flag => '--username', :name => :username
     long_option :flag => '--remove', :name => :remove
     long_option :flag => '--remove-timer', :equals => true, :name => :remove_timer
-    long_option :flag => '--potfile-disable', :name => :potfile_disable
+    long_option :flag => '--disable-potfile', :name => :disable_potfile
     long_option :flag => '--debug-mode', :equals => true, :name => :debug_mode
     long_option :flag => '--debug-file', :equals => true, :name => :debug_file
     long_option :flag => '--induction-dir', :equals => true, :name => :induction_dir

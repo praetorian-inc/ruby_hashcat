@@ -1,0 +1,696 @@
+* Zero-Byte
+Watchdog: Temperature abort trigger set to 90c
+Watchdog: Temperature retain trigger set to 80c
+Device #1: GRID K520, 4095MB, 797Mhz, 8MCU
+Device #1: Kernel /home/ubuntu/tools/oclHashcat-1.01/kernels/4318/m0400.sm_30.64.ptx
+Device #1: Kernel /home/ubuntu/tools/oclHashcat-1.01/kernels/4318/bzero.64.ptx
+
+Cache-hit dictionary stats /home/ubuntu/tools/oclHashcat-1.01/example.dict: 1210228 bytes, 129988 words, 408292308 keyspace
+
+NOTE: autotuned --gpu-accel from 64 to 8
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (30 secs)
+Time.Estimated.: Wed Aug 20 23:56:17 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3575 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 5658664/17148276936 (0.03%)
+Rejected.......: 1169448/5658664 (20.67%)
+HWMon.GPU.#1...: 99% Util, 54c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (1 min, 0 secs)
+Time.Estimated.: Wed Aug 20 23:56:10 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3569 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 11046352/17148276936 (0.06%)
+Rejected.......: 2035152/11046352 (18.42%)
+HWMon.GPU.#1...: 99% Util, 57c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (1 min, 30 secs)
+Time.Estimated.: Wed Aug 20 23:56:05 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3556 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 16343228/17148276936 (0.10%)
+Rejected.......: 2842812/16343228 (17.39%)
+HWMon.GPU.#1...: 98% Util, 59c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (2 mins, 0 secs)
+Time.Estimated.: Wed Aug 20 23:55:58 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3571 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 21878790/17148276936 (0.13%)
+Rejected.......: 3889158/21878790 (17.78%)
+HWMon.GPU.#1...: 98% Util, 60c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (2 mins, 30 secs)
+Time.Estimated.: Wed Aug 20 23:55:52 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3576 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 27213936/17148276936 (0.16%)
+Rejected.......: 4702320/27213936 (17.28%)
+HWMon.GPU.#1...: 99% Util, 61c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (3 mins, 0 secs)
+Time.Estimated.: Wed Aug 20 23:55:46 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3574 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 32502916/17148276936 (0.19%)
+Rejected.......: 5502084/32502916 (16.93%)
+HWMon.GPU.#1...: 99% Util, 62c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (3 mins, 30 secs)
+Time.Estimated.: Wed Aug 20 23:55:41 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3569 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 37805470/17148276936 (0.22%)
+Rejected.......: 6282654/37805470 (16.62%)
+HWMon.GPU.#1...: 99% Util, 63c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (4 mins, 0 secs)
+Time.Estimated.: Wed Aug 20 23:55:34 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3568 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 43318016/17148276936 (0.25%)
+Rejected.......: 7305984/43318016 (16.87%)
+HWMon.GPU.#1...: 99% Util, 63c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (4 mins, 30 secs)
+Time.Estimated.: Wed Aug 20 23:55:29 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3565 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 48579906/17148276936 (0.28%)
+Rejected.......: 8078658/48579906 (16.63%)
+HWMon.GPU.#1...: 99% Util, 63c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (5 mins, 0 secs)
+Time.Estimated.: Wed Aug 20 23:55:25 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3571 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 53644530/17148276936 (0.31%)
+Rejected.......: 8621298/53644530 (16.07%)
+HWMon.GPU.#1...: 99% Util, 62c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (5 mins, 30 secs)
+Time.Estimated.: Wed Aug 20 23:55:19 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3562 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 58903060/17148276936 (0.34%)
+Rejected.......: 9390612/58903060 (15.94%)
+HWMon.GPU.#1...: 99% Util, 62c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (6 mins, 0 secs)
+Time.Estimated.: Wed Aug 20 23:55:13 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3578 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 64323710/17148276936 (0.38%)
+Rejected.......: 10322046/64323710 (16.05%)
+HWMon.GPU.#1...: 99% Util, 62c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (6 mins, 30 secs)
+Time.Estimated.: Wed Aug 20 23:55:08 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3574 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 69549068/17148276936 (0.41%)
+Rejected.......: 11025420/69549068 (15.85%)
+HWMon.GPU.#1...: 99% Util, 62c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (7 mins, 0 secs)
+Time.Estimated.: Wed Aug 20 23:55:03 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3571 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 74735778/17148276936 (0.44%)
+Rejected.......: 11722914/74735778 (15.69%)
+HWMon.GPU.#1...: 98% Util, 63c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (7 mins, 30 secs)
+Time.Estimated.: Wed Aug 20 23:54:56 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3566 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 80285032/17148276936 (0.47%)
+Rejected.......: 12782952/80285032 (15.92%)
+HWMon.GPU.#1...: 99% Util, 64c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (8 mins, 0 secs)
+Time.Estimated.: Wed Aug 20 23:54:52 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3564 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 85457470/17148276936 (0.50%)
+Rejected.......: 13433406/85457470 (15.72%)
+HWMon.GPU.#1...: 99% Util, 65c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (8 mins, 30 secs)
+Time.Estimated.: Wed Aug 20 23:54:48 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3575 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 90565094/17148276936 (0.53%)
+Rejected.......: 14051814/90565094 (15.52%)
+HWMon.GPU.#1...: 99% Util, 66c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (9 mins, 0 secs)
+Time.Estimated.: Wed Aug 20 23:54:43 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3570 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 95762346/17148276936 (0.56%)
+Rejected.......: 14759850/95762346 (15.41%)
+HWMon.GPU.#1...: 99% Util, 67c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (9 mins, 30 secs)
+Time.Estimated.: Wed Aug 20 23:54:36 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3571 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 101240460/17148276936 (0.59%)
+Rejected.......: 15715980/101240460 (15.52%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (10 mins, 0 secs)
+Time.Estimated.: Wed Aug 20 23:54:32 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3577 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 106399114/17148276936 (0.62%)
+Rejected.......: 16385418/106399114 (15.40%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (10 mins, 30 secs)
+Time.Estimated.: Wed Aug 20 23:54:26 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3571 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 111659584/17148276936 (0.65%)
+Rejected.......: 17123904/111659584 (15.34%)
+HWMon.GPU.#1...: 99% Util, 69c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (11 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:54:22 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3582 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 116784050/17148276936 (0.68%)
+Rejected.......: 17759154/116784050 (15.21%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (11 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:54:15 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3571 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 122293076/17148276936 (0.71%)
+Rejected.......: 18746196/122293076 (15.33%)
+HWMon.GPU.#1...: 99% Util, 67c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (12 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:54:10 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3570 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 127506750/17148276936 (0.74%)
+Rejected.......: 19470654/127506750 (15.27%)
+HWMon.GPU.#1...: 99% Util, 66c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (12 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:54:05 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3563 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 132733528/17148276936 (0.77%)
+Rejected.......: 20208216/132733528 (15.22%)
+HWMon.GPU.#1...: 99% Util, 66c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (13 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:53:58 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3573 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 138278254/17148276936 (0.81%)
+Rejected.......: 21230958/138278254 (15.35%)
+HWMon.GPU.#1...: 98% Util, 65c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (13 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:53:52 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3573 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 143575256/17148276936 (0.84%)
+Rejected.......: 22038744/143575256 (15.35%)
+HWMon.GPU.#1...: 99% Util, 65c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (14 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:53:47 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3563 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 148790946/17148276936 (0.87%)
+Rejected.......: 22765218/148790946 (15.30%)
+HWMon.GPU.#1...: 99% Util, 65c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (14 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:53:41 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3568 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 154157004/17148276936 (0.90%)
+Rejected.......: 23609292/154157004 (15.32%)
+HWMon.GPU.#1...: 99% Util, 66c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (15 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:53:35 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3576 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 159558586/17148276936 (0.93%)
+Rejected.......: 24521658/159558586 (15.37%)
+HWMon.GPU.#1...: 99% Util, 66c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (15 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:53:30 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3569 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 164743448/17148276936 (0.96%)
+Rejected.......: 25217304/164743448 (15.31%)
+HWMon.GPU.#1...: 99% Util, 67c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (16 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:53:24 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3565 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 170028194/17148276936 (0.99%)
+Rejected.......: 25980066/170028194 (15.28%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (16 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:53:19 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3566 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 175296216/17148276936 (1.02%)
+Rejected.......: 26758872/175296216 (15.26%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (17 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:53:12 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3566 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 180828334/17148276936 (1.05%)
+Rejected.......: 27801774/180828334 (15.37%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (17 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:53:07 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3569 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 186068426/17148276936 (1.09%)
+Rejected.......: 28552650/186068426 (15.35%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (18 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:53:02 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3574 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 191239016/17148276936 (1.12%)
+Rejected.......: 29201256/191239016 (15.27%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (18 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:52:56 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3568 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 196643118/17148276936 (1.15%)
+Rejected.......: 30116142/196643118 (15.32%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (19 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:52:52 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3567 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 201709834/17148276936 (1.18%)
+Rejected.......: 30693642/201709834 (15.22%)
+HWMon.GPU.#1...: 99% Util, 69c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (19 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:52:46 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3562 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 206996008/17148276936 (1.21%)
+Rejected.......: 31457832/206996008 (15.20%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (20 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:52:41 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3576 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 212231522/17148276936 (1.24%)
+Rejected.......: 32204130/212231522 (15.17%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (20 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:52:34 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3564 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 217805438/17148276936 (1.27%)
+Rejected.......: 33256062/217805438 (15.27%)
+HWMon.GPU.#1...: 99% Util, 69c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (21 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:52:29 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3567 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 223033308/17148276936 (1.30%)
+Rejected.......: 33994716/223033308 (15.24%)
+HWMon.GPU.#1...: 98% Util, 69c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (21 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:52:24 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3577 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 228154078/17148276936 (1.33%)
+Rejected.......: 34626270/228154078 (15.18%)
+HWMon.GPU.#1...: 99% Util, 68c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (22 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:52:20 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3565 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 233289926/17148276936 (1.36%)
+Rejected.......: 35272902/233289926 (15.12%)
+HWMon.GPU.#1...: 99% Util, 67c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (22 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:52:14 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3566 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 238752416/17148276936 (1.39%)
+Rejected.......: 36213408/238752416 (15.17%)
+HWMon.GPU.#1...: 99% Util, 66c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (23 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:52:09 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3569 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 243958530/17148276936 (1.42%)
+Rejected.......: 36930306/243958530 (15.14%)
+HWMon.GPU.#1...: 99% Util, 65c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (23 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:52:05 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3574 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 249063256/17148276936 (1.45%)
+Rejected.......: 37545816/249063256 (15.07%)
+HWMon.GPU.#1...: 99% Util, 65c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (24 mins, 1 sec)
+Time.Estimated.: Wed Aug 20 23:51:59 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3572 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 254360056/17148276936 (1.48%)
+Rejected.......: 38320632/254360056 (15.07%)
+HWMon.GPU.#1...: 99% Util, 65c Temp, -1% Fan
+
+Session.Name...: cudaHashcat
+Status.........: Running
+Rules.Type.....: File (/home/ubuntu/tools/oclHashcat-1.01/rules/passwordspro.rule)
+Input.Mode.....: File (/home/ubuntu/tools/oclHashcat-1.01/example.dict)
+Hash.Target....: File (/home/ubuntu/tools/oclHashcat-1.01/hashes.txt)
+Hash.Type......: phpass, MD5(Wordpress), MD5(phpBB3)
+Time.Started...: Tue Aug 19 15:58:15 2014 (24 mins, 31 secs)
+Time.Estimated.: Wed Aug 20 23:51:54 2014 (1 day, 7 hours)
+Speed.GPU.#1...:     3571 H/s
+Recovered......: 0/42 (0.00%) Digests, 0/42 (0.00%) Salts
+Progress.......: 259694900/17148276936 (1.51%)
+Rejected.......: 39166260/259694900 (15.08%)
+HWMon.GPU.#1...: 99% Util, 66c Temp, -1% Fan
