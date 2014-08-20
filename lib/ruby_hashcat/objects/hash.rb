@@ -50,6 +50,7 @@ module RubyHashcat
               crack.attack_mode = @attack
               crack.charset = @charset
             elsif @attack == 0 # Dictionary
+              crack.attack_mode = @attack
               crack.wordlist = @word_list
             elsif @attack == 1 # Combination
               crack.attack_mode = @attack
