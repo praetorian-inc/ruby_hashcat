@@ -1,5 +1,14 @@
 require 'rprogram/task'
 
+###########################################################################
+# Author:                                                 Coleton Pierson #
+# Company:                                                     Praetorian #
+# Date:                                                     June 28, 2014 #
+# Project:                                                   Ruby Hashcat #
+# Description:           Program wrapper methods class. Holds the methods #
+#                        for all cli flags.                               #
+###########################################################################
+
 module RubyHashcat
   class HashcatTask < RProgram::Task
 
@@ -75,7 +84,7 @@ module RubyHashcat
     # Rules:
     short_option :flag => '-j', :name => :rule_left
     short_option :flag => '-k', :name => :rule_right
-    short_option :flag => '-r', :name => :rules, :multiple  => true, :separator => ' -r '
+    short_option :flag => '-r', :name => :rules, :multiple => true, :separator => ' -r '
     short_option :flag => '-g', :name => :generate_rules
     long_option :flag => '--generate-rules-func-min', :equals => true, :name => :generate_rules_func_min
     long_option :flag => '--generate-rules-func-max', :equals => true, :name => :generate_rules_func_max

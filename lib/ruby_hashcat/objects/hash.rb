@@ -1,8 +1,24 @@
 require 'sucker_punch'
+
+###########################################################################
+# Author:                                                 Coleton Pierson #
+# Company:                                                     Praetorian #
+# Date:                                                   August 20, 2014 #
+# Project:                                                   Ruby Hashcat #
+# Description:               Main hash class. Interfaces with cli wrapper #
+#                            and processes async tasks.                   #
+###########################################################################
+
 module RubyHashcat
   module Objects
     class Hash
 
+      ###########################################################################
+      # @method                                            initialize(id, path) #
+      # @param id:                                            [Integer] Hash ID #
+      # @param path:                                   [String] oclHashcat Path #
+      # @description                                     Initialize a new hash. #
+      ###########################################################################
       def initialize(id, path)
         raise RubyHashcat::Objects::Hash::InvalidHashId unless id.is_a? Integer
         raise RubyHashcat::Objects::Hash::InvalidHashCatLocation unless Dir.exists?(File.dirname(path))
@@ -11,14 +27,21 @@ module RubyHashcat
         @ocl = path
       end
 
+      ###########################################################################
+      # @method                                                    crack(async) #
+      # @param async:                                     [Boolean] Crack Async #
+      # @description                  Crack the hash with the current settings. #
+      ###########################################################################
       def crack(async=false)
+
         # Check if async
         if async
+          # SuckerPunch the crack method
           RubyHashcat::Objects::Hash::Async.new.async.crack(self)
         else
           path = File.dirname(__FILE__)
 
-          # Redirect standard output and errors
+          # Redirect standard output and errors for parsing
           $stdout.reopen("#{path}/../tmp/#{@id}_output.txt", 'w')
           $stderr.reopen("#{path}/../tmp/#{@id}_errors.txt", 'w')
 
@@ -27,7 +50,7 @@ module RubyHashcat
 
           worker = RubyHashcat::Program.new(@ocl)
 
-          # Validate Input
+          # Start cracking with wrapper
           worker.crack do |crack|
 
             # Hash Type
@@ -73,16 +96,16 @@ module RubyHashcat
               # Check if there are 2 word lists for combination attack
               raise RubyHashcat::Objects::Hash::InvalidCombinationAttack unless @word_list.count == 2
               crack.wordlist = @word_list
-            elsif @attack == 7 or @attack == 6 # Hybrid dictionary & mask
-              # Check if a word list and charset exist
+            elsif @attack == 6
               raise RubyHashcat::Objects::Hash::InvalidHybridAttack unless @word_list and @charset
-              if @char_word
-                crack.charset = @charset
-                crack.wordlist = @word_list
-              else
-                crack.wordlist = @word_list
-                crack.charset = @charset
-              end
+              # Word List + Mask
+              crack.wordlist = @word_list
+              crack.charset = @charset
+            elsif @attack == 7 # Hybrid dictionary & mask
+              raise RubyHashcat::Objects::Hash::InvalidHybridAttack unless @word_list and @charset
+              # Mask + Word List
+              crack.charset = @charset
+              crack.wordlist = @word_list
             end
 
           end
@@ -91,14 +114,23 @@ module RubyHashcat
         end
       end
 
+      ###########################################################################
+      # @method                                                           clean #
+      # @description                     Deletes all files created by cracking. #
+      ###########################################################################
       def clean
         path = File.dirname(__FILE__)
-        File.delete("#{path}/../tmp/.hashcat_#{@id}_pid") if File.exists("#{path}/../tmp/.hashcat_#{@id}_pid")
-        File.delete("#{path}/../tmp/#{@id}_output.txt") if File.exists("#{path}/../tmp/#{@id}_output.txt")
-        File.delete("#{path}/../tmp/#{@id}_errors.txt") if File.exists("#{path}/../tmp/#{@id}_errors.txt")
+        File.delete("#{path}/../tmp/.hashcat_#{@id}_pid") if File.exists?("#{path}/../tmp/.hashcat_#{@id}_pid")
+        File.delete("#{path}/../tmp/#{@id}_output.txt") if File.exists?("#{path}/../tmp/#{@id}_output.txt")
+        File.delete("#{path}/../tmp/#{@id}_errors.txt") if File.exists?("#{path}/../tmp/#{@id}_errors.txt")
         File.delete("#{path}/../tmp/#{@id}.crack") if File.exists?("#{path}/../tmp/#{@id}.crack")
       end
 
+      ###########################################################################
+      # @method                                                          status #
+      # @description             Reads oclHashcat output and parses the status. #
+      # @return                              [Hash] Hash with status and errors #
+      ###########################################################################
       def status
         path = File.dirname(__FILE__)
         arr = RubyHashcat::Parse.stdout("#{path}/../tmp/#{@id}_output.txt")[-1]
@@ -106,16 +138,36 @@ module RubyHashcat
         {:data => arr, :errors => err}
       end
 
+      ###########################################################################
+      # @method                                                        running? #
+      # @description           Checks pid file to see if oclhashcat is running. #
+      # @return                                    [Boolean] oclHashcat Running #
+      ###########################################################################
       def running?
         path = File.dirname(__FILE__)
         File.exists?("#{path}/../tmp/.hashcat_#{@id}_pid")
       end
 
+      ###########################################################################
+      # @method                                                          status #
+      # @description   Reads oclHashcat pot file and parses the cracked hashes. #
+      # @return    [Hash] Returns cracked hashes and their plaintext passwords. #
+      ###########################################################################
       def results
         path = File.dirname(__FILE__)
         RubyHashcat::Parse.pot_file("#{path}/../tmp/#{@id}.crack")
       end
 
+      ####################
+      # Modifier Methods #
+      ####################
+
+      ###########################################################################
+      # @method                                               word_list=(value) #
+      # @param value:                                   [Array] Word List Paths #
+      #                                                 [String] Word List Path #
+      # @description                                          Set word list(s). #
+      ###########################################################################
       def word_list=(value)
         @word_list = []
         if value.is_a? Array
@@ -129,25 +181,53 @@ module RubyHashcat
         end
       end
 
+      ###########################################################################
+      # @method                                                    hash=(value) #
+      # @param value:                                   [String] Hash File Path #
+      # @description                                                  Set hash. #
+      ###########################################################################
       def hash=(value)
         raise RubyHashcat::Objects::Hash::InvalidHashFile unless File.exists?(value)
         @hash = value
       end
 
+      ###########################################################################
+      # @method                                                    type=(value) #
+      # @param value:                                       [Integer] Hash Type #
+      # @description                                             Set hash type. #
+      ###########################################################################
       def type=(value)
         raise RubyHashcat::Objects::Hash::InvalidHashId unless value.is_a? Integer
         @type = value
       end
 
+      ###########################################################################
+      # @method                                                  attack=(value) #
+      # @param value:                                     [Integer] Attack Type #
+      # @description                                           Set attack type. #
+      ###########################################################################
       def attack=(value)
-        raise RubyHashcat::Objects::Hash::InvalidAttack unless value.is_a? Integer and [0,1,3,6,7].include?(value)
+        raise RubyHashcat::Objects::Hash::InvalidAttack unless value.is_a? Integer and [0, 1, 3, 6, 7].include?(value)
         @attack = value
       end
 
+      ###########################################################################
+      # @method                                               char_word=(value) #
+      # @param value:            [Boolean] Charset first in Hybrid attack order #
+      # @description             Set attack order for hybrid attack to (charset #
+      #                          + word list) instead of (word list + charset). #
+      ###########################################################################
       def char_word=(value)
         @char_word = !!value
       end
 
+      ###########################################################################
+      # @method                                                   rules=(value) #
+      # @param value:                                   [Array] Rule File Names #
+      #                                                 [String] Rule File Name #
+      # @description                   Set rules for word lists. Verifies rules #
+      #                                are in the ocl rule folder (/ocl/rules). #
+      ###########################################################################
       def rules=(value)
         list = Dir.entries("#{@path}/rules/")
         @rule = []
@@ -162,31 +242,54 @@ module RubyHashcat
         end
       end
 
+      ###########################################################################
+      # @method                                             max_runtime=(value) #
+      # @param value:                                         [Integer] Seconds #
+      # @description                         Set max time for cracking to last. #
+      ###########################################################################
       def max_runtime=(value)
         raise RubyHashcat::Objects::Hash::InvalidRuntime unless value.is_a? Integer and value >= 300
         @runtime = value
       end
 
+      ###########################################################################
+      # @method                                                username=(value) #
+      # @param value:                                        [Boolean] Username #
+      # @description                 Set true if hash file contains user names. #
+      ###########################################################################
       def username=(value)
         @username = !!value
       end
 
+      ###########################################################################
+      # @method                                                 charset=(value) #
+      # @param value:                                          [String] Charset #
+      # @description            Set charset for brute forcing or hybrid attack. #
+      #                         Must follow oclHashcat's charset pattern:       #
+      #                           ?l - lowercase                                #
+      #                           ?u - uppercase                                #
+      #                           ?d - digit                                    #
+      #                           ?s - special                                  #
+      #                           ?a - all                                      #
+      ###########################################################################
       def charset=(value)
         raise RubyHashcat::Objects::Hash::InvalidCharset unless value.match(/(\?[lasdu]{1})+/)
         @charset = value
       end
 
-      # Exceptions
+      ####################
+      # Class Exceptions #
+      ####################
       class InvalidHashType < StandardError
         def message
           'Invalid Hash Type. Hash type must be an integer.'
         end
       end
-        class InvalidHashFile < StandardError
-          def message
-            'Invalid Hash Type. Hash type must be an integer.'
-          end
+      class InvalidHashFile < StandardError
+        def message
+          'Invalid Hash Type. Hash type must be an integer.'
         end
+      end
       class InvalidHashWordList < StandardError
         def message
           'Invalid Word List File. Please check your post request'
@@ -243,6 +346,9 @@ module RubyHashcat
         end
       end
 
+      #########################
+      # Sucker Punch Subclass #
+      #########################
       class Async
         include ::SuckerPunch::Job
         workers 3
