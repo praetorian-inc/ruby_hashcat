@@ -67,45 +67,48 @@ module RubyHashcat
             crack.disable_potfile = true
 
             # Rules
-            if @rule
-              crack.rules = @rule
-            end
+            crack.rules = @rule if @rule
 
             # Runtime limit
-            if @runtime
-              crack.runtime = @runtime
-            end
+            crack.runtime = @runtime if @runtime
 
             # Contains Username
-            if @username
-              crack.username = true
+            crack.username = true if @username
+
+            if @attack == 1
+              crack.rule_left = @left_rule if @left_rule
+              crack.rule_right = @right_rule if @right_rule
             end
 
             crack.attack_mode = @attack
 
             crack.hash = @hash
 
-            # Attack modes
-            if @attack == 3 # Bruteforce/Mask
-              # Check if charset exists
-              raise RubyHashcat::Objects::Hash::InvalidMaskAttack unless @charset
-              crack.charset = @charset
-            elsif @attack == 0 # Dictionary
-              crack.wordlist = @word_list
-            elsif @attack == 1 # Combination
-              # Check if there are 2 word lists for combination attack
-              raise RubyHashcat::Objects::Hash::InvalidCombinationAttack unless @word_list.count == 2
-              crack.wordlist = @word_list
-            elsif @attack == 6
-              raise RubyHashcat::Objects::Hash::InvalidHybridAttack unless @word_list and @charset
-              # Word List + Mask
-              crack.wordlist = @word_list
-              crack.charset = @charset
-            elsif @attack == 7 # Hybrid dictionary & mask
-              raise RubyHashcat::Objects::Hash::InvalidHybridAttack unless @word_list and @charset
-              # Mask + Word List
-              crack.charset = @charset
-              crack.wordlist = @word_list
+            # Attack mode config
+            case @attack
+              when 0
+                # Dictionary Attack
+                crack.wordlist = @word_list
+              when 1
+                # Combination Attack
+                raise RubyHashcat::Objects::Hash::InvalidCombinationAttack unless @word_list.count == 2
+                crack.wordlist = @word_list
+              when 3
+                # Bruteforce/Mask Attack
+                raise RubyHashcat::Objects::Hash::InvalidMaskAttack unless @charset
+                crack.charset = @charset
+              when 6
+                # Hybrid Dict + Mask Attack
+                raise RubyHashcat::Objects::Hash::InvalidHybridAttack unless @word_list and @charset
+                crack.wordlist = @word_list
+                crack.charset = @charset
+              when 7
+                # Hybrid Mask + Dict Attack
+                raise RubyHashcat::Objects::Hash::InvalidHybridAttack unless @word_list and @charset
+                crack.charset = @charset
+                crack.wordlist = @word_list
+              else
+                raise RubyHashcat::Objects::Hash::InvalidAttack
             end
 
           end
@@ -232,12 +235,12 @@ module RubyHashcat
         list = Dir.entries("#{@path}/rules/")
         @rule = []
         if value.is_a? Array
-          raise RubyHashcat::Objects::Hash::InvalidRule unless (value - list).empty?
+          raise RubyHashcat::Objects::Hash::InvalidRuleFile unless (value - list).empty?
           value.each do |x|
             @rule << "#{@path}/rules/#{x}"
           end
         else
-          raise RubyHashcat::Objects::Hash::InvalidRule unless list.include?(value)
+          raise RubyHashcat::Objects::Hash::InvalidRuleFile unless list.include?(value)
           @rule << "#{@path}/rules/#{value}"
         end
       end
@@ -277,6 +280,26 @@ module RubyHashcat
         @charset = value
       end
 
+      ###########################################################################
+      # @method                                               left_rule=(value) #
+      # @param value:                                          [String] Charset #
+      # @description                  Set rules for left dict on hybrid attack. #
+      ###########################################################################
+      def left_rule=(value)
+        raise RubyHashcat::Objects::Hash::InvalidRule unless value.match(/([:lucCtrdfq\{\}\[\]]{1})||(T[0-9]+)||(p[0-9]+)||(\$[0-9]+)||(\^[0-9]+)||(D[0-9]+)||(x[0-9]{2,})||(i[0-9]{2,})||(o[0-9]{2,})||('[0-9]+)||(s[0-9]{2,})||(@[0-9]+)||(z[0-9]+)||(Z[0-9]+)/) and value != ''
+        @left_rule = value
+      end
+
+      ###########################################################################
+      # @method                                              right_rule=(value) #
+      # @param value:                                          [String] Charset #
+      # @description                 Set rules for right dict on hybrid attack. #
+      ###########################################################################
+      def right_rule=(value)
+        raise RubyHashcat::Objects::Hash::InvalidRule unless value.match(/([:lucCtrdfq\{\}\[\]]{1})||(T[0-9]+)||(p[0-9]+)||(\$[0-9]+)||(\^[0-9]+)||(D[0-9]+)||(x[0-9]{2,})||(i[0-9]{2,})||(o[0-9]{2,})||('[0-9]+)||(s[0-9]{2,})||(@[0-9]+)||(z[0-9]+)||(Z[0-9]+)/) and value != ''
+        @right_rule = value
+      end
+
       ####################
       # Class Exceptions #
       ####################
@@ -295,14 +318,19 @@ module RubyHashcat
           'Invalid Word List File. Please check your post request'
         end
       end
-      class InvalidRule < StandardError
+      class InvalidRuleFile < StandardError
         def message
-          'Invalid Rule File. To view a list of rules, please check the documentation or GET /rules.json'
+          'Invalid Rule File. To view the default rule files packaged with hashcat, please check the documentation or GET /rules.json'
         end
       end
       class InvalidCharset < StandardError
         def message
-          'Invalid Charset String. To view a list of charsets, please check the documentation.'
+          'Invalid Charset String. To view a list of valid charsets, please check the documentation.'
+        end
+      end
+      class InvalidRule < StandardError
+        def message
+          'Invalid Rule. To view a list of valid rules, please check the documentation.'
         end
       end
       class InvalidAttack < StandardError
