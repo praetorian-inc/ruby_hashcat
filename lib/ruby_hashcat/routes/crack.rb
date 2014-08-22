@@ -38,9 +38,10 @@ module RubyHashcat
             File.rename(params[:word_list_2][:tempfile], word_list_2)
             word_list = tmp
           else
-            raise RubyHashcat::Objects::Hash::InvalidCombinationAttack unless File.exists?(params[:word_list][:tempfile])
-            word_list = "#{path}/../tmp/#{id}.dict"
-            File.rename(params[:word_list][:tempfile], word_list)
+            if File.exists?(params[:word_list][:tempfile])
+              word_list = "#{path}/../tmp/#{id}.dict"
+              File.rename(params[:word_list][:tempfile], word_list)
+            end
         end
 
         if params[:rule_sets]
