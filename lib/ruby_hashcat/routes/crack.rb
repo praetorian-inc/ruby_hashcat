@@ -2,6 +2,11 @@ module RubyHashcat
   class API < Sinatra::Application
     post '/crack.json' do
       content_type :json
+
+      if settings.debug
+        pp params
+      end
+
       path = File.dirname(__FILE__)
 
       # Validate required parameters

@@ -2,6 +2,11 @@ module RubyHashcat
   class API < Sinatra::Application
     post '/clean.json' do
       content_type :json
+
+      if settings.debug
+        pp params
+      end
+
       hc = RubyHashcat::Objects::Hash.new(params[:id].to_i, settings.ocl_location)
       if hc.exists?
         hc.clean

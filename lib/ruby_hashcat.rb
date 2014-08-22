@@ -9,8 +9,9 @@ require 'ruby_hashcat/version'
 
 module RubyHashcat
   # Hashcat Rest API
-  def self.start_api(hashcat_location)
+  def self.start_api(hashcat_location, debug=false)
     RubyHashcat::API.set :ocl_location, hashcat_location
+    RubyHashcat::API.set :debug, debug
     RubyHashcat::API.run!
   end
 end

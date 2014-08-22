@@ -322,7 +322,7 @@ module RubyHashcat
       end
       class InvalidHashFile < RubyHashcatError
         def message
-          'Invalid Hash Type. Hash type must be an integer.'
+          'Invalid Hash File. Check your hash file.'
         end
       end
       class InvalidHashWordList < RubyHashcatError

@@ -2,6 +2,11 @@ module RubyHashcat
   class API < Sinatra::Application
     get '/status.json' do
       content_type :json
+
+      if settings.debug
+        pp params
+      end
+
       hc = RubyHashcat::Objects::Hash.new(params[:id].to_i, settings.ocl_location)
       unless hc.exists?
         return {:status => 'error', :message => 'Invalid ID.'}.to_json
@@ -15,6 +20,11 @@ module RubyHashcat
 
     get '/status-advanced.json' do
       content_type :json
+
+      if settings.debug
+        pp params
+      end
+
       hc = RubyHashcat::Objects::Hash.new(params[:id].to_i, settings.ocl_location)
       unless hc.exists?
         return {:status => 'error', :message => 'Invalid ID.'}.to_json
