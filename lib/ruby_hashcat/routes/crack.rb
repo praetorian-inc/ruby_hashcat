@@ -56,6 +56,7 @@ module RubyHashcat
         hc.word_list = word_list
         hc.type = type
         hc.crack(true)
+
         return {:status => 'success'}.to_json
       rescue RubyHashcat::Objects::Hash::RubyHashcatError => e
         return {:error => e.message}.to_json

@@ -7,12 +7,16 @@ module RubyHashcat
         pp params
       end
 
-      hc = RubyHashcat::Objects::Hash.new(params[:id].to_i, settings.ocl_location)
-      if hc.exists?
-        hc.clean
-        return {:status => 'success'}.to_json
-      else
-        return {:status => 'error', :message => 'Invalid ID.'}.to_json
+      begin
+        hc = RubyHashcat::Objects::Hash.new(params[:id].to_i, settings.ocl_location)
+        if hc.exists?
+          hc.clean
+          return {:status => 'success'}.to_json
+        else
+          return {:status => 'error', :message => 'Invalid ID.'}.to_json
+        end
+      rescue => e
+        return {:status => 'error'}.to_json
       end
     end
   end
