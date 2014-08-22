@@ -70,7 +70,7 @@ module RubyHashcat
       rescue RubyHashcat::Objects::Hash::RubyHashcatError => e
         return {:error => e.message}.to_json
       rescue => e
-        return {:error => e.message}.to_json
+        return {:error => e.message, :error_backlog => e.backtrace, :error => e}.to_json
       end
 
     end
