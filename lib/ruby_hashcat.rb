@@ -17,5 +17,7 @@ module RubyHashcat
 end
 
 if __FILE__ == $0
-  RubyHashcat.start_api('/location/of/oclhashcat/')
+  path = File.dirname(__FILE__)
+  puts File.exists?("#{path}/../../cudaHashcat-1.30/cudaHashcat64.bin")
+  RubyHashcat.start_api("#{path}/../../cudaHashcat-1.30/cudaHashcat64.bin", true)
 end

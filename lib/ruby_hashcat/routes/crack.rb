@@ -16,6 +16,9 @@ module RubyHashcat
 
       begin
         hc = RubyHashcat::Objects::Hash.new(params[:id].to_i, settings.ocl_location)
+        if hc.exists? and not hc.running?
+          hc.clean
+        end
         id = params[:id].to_i
         attack = params[:attack].to_i
         type = params[:type].to_i
@@ -55,13 +58,14 @@ module RubyHashcat
         hc.hash = hash
         hc.word_list = word_list
         hc.type = type
+
         hc.crack(true)
 
         return {:status => 'success'}.to_json
       rescue RubyHashcat::Objects::Hash::RubyHashcatError => e
         return {:error => e.message}.to_json
       rescue => e
-        raise e
+        return {:error => e.message}.to_json
       end
 
     end

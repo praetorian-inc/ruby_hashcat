@@ -136,9 +136,16 @@ module RubyHashcat
       ###########################################################################
       def status
         path = File.dirname(__FILE__)
-        arr = RubyHashcat::Parse.stdout("#{path}/../tmp/#{@id}_output.txt")[-1]
-        err = File.read("#{path}/../tmp/#{@id}_errors.txt").chomp.strip
-        {:data => arr, :errors => err}
+        if File.exists?("#{path}/../tmp/#{@id}_output.txt") and File.exists?("#{path}/../tmp/#{@id}_errors.txt")
+          arr = RubyHashcat::Parse.stdout("#{path}/../tmp/#{@id}_output.txt")
+          if arr.is_a? Array
+            arr_dat = arr[-1]
+          end
+          err = File.read("#{path}/../tmp/#{@id}_errors.txt").chomp.strip
+          {:data => arr_dat, :errors => err}
+        else
+          return false
+        end
       end
 
       ###########################################################################
