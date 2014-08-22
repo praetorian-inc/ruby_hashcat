@@ -9,6 +9,9 @@ module RubyHashcat
 
       path = File.dirname(__FILE__)
 
+      tmp = params.clone
+      params = RubyHashcat::Parse.hash(tmp)
+
       # Validate required parameters
       unless params[:id] and params[:type] and params[:attack] and params[:hash]
         return {error: 'Invalid Parameters. Please check the documentation.'}.to_json
@@ -61,7 +64,11 @@ module RubyHashcat
         File.rename(params[:hash][:tempfile], hash)
 
         hc.hash = hash
-        hc.word_list = word_list
+
+        if word_list
+          hc.word_list = word_list
+        end
+
         hc.type = type
 
         hc.crack(true)
@@ -70,7 +77,7 @@ module RubyHashcat
       rescue RubyHashcat::Objects::Hash::RubyHashcatError => e
         return {:error => e.message}.to_json
       rescue => e
-        return {:error => e.message, :error_backlog => e.backtrace, :error => e}.to_json
+        return {:error => e.message}.to_json
       end
 
     end
