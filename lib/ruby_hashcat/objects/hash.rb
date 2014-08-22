@@ -313,6 +313,8 @@ module RubyHashcat
       ####################
       # Class Exceptions #
       ####################
+      class RubyHashcatError < StandardError
+      end
       class InvalidHashType < RubyHashcatError
         def message
           'Invalid Hash Type. Hash type must be an integer.'
@@ -382,9 +384,6 @@ module RubyHashcat
         def message
           'The ID you chose for this hash already exists. Please choose another.'
         end
-      end
-      class RubyHashcat::Objects::Hash::RubyHashcatError < StandardError
-
       end
 
       #########################
