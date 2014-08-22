@@ -152,6 +152,16 @@ module RubyHashcat
       end
 
       ###########################################################################
+      # @method                                                         exists? #
+      # @description        Checks to see if the object has initiated cracking. #
+      # @return                                                       [Boolean] #
+      ###########################################################################
+      def exists?
+        path = File.dirname(__FILE__)
+        File.exists?("#{path}/../tmp/#{@id}_output.txt")
+      end
+
+      ###########################################################################
       # @method                                                          status #
       # @description   Reads oclHashcat pot file and parses the cracked hashes. #
       # @return    [Hash] Returns cracked hashes and their plaintext passwords. #
@@ -303,75 +313,78 @@ module RubyHashcat
       ####################
       # Class Exceptions #
       ####################
-      class InvalidHashType < StandardError
+      class InvalidHashType < RubyHashcatError
         def message
           'Invalid Hash Type. Hash type must be an integer.'
         end
       end
-      class InvalidHashFile < StandardError
+      class InvalidHashFile < RubyHashcatError
         def message
           'Invalid Hash Type. Hash type must be an integer.'
         end
       end
-      class InvalidHashWordList < StandardError
+      class InvalidHashWordList < RubyHashcatError
         def message
           'Invalid Word List File. Please check your post request'
         end
       end
-      class InvalidRuleFile < StandardError
+      class InvalidRuleFile < RubyHashcatError
         def message
           'Invalid Rule File. To view the default rule files packaged with hashcat, please check the documentation or GET /rules.json'
         end
       end
-      class InvalidCharset < StandardError
+      class InvalidCharset < RubyHashcatError
         def message
           'Invalid Charset String. To view a list of valid charsets, please check the documentation.'
         end
       end
-      class InvalidRule < StandardError
+      class InvalidRule < RubyHashcatError
         def message
           'Invalid Rule. To view a list of valid rules, please check the documentation.'
         end
       end
-      class InvalidAttack < StandardError
+      class InvalidAttack < RubyHashcatError
         def message
           'Invalid Attack. To view a list of attacks, please check the documentation.'
         end
       end
-      class InvalidHashId < StandardError
+      class InvalidHashId < RubyHashcatError
         def message
           'Invalid Hash ID. Hash ID must be an integer.'
         end
       end
-      class InvalidHashCatLocation < StandardError
+      class InvalidHashCatLocation < RubyHashcatError
         def message
           'Invalid HashCat path. HashCat path must exist.'
         end
       end
-      class InvalidRuntime < StandardError
+      class InvalidRuntime < RubyHashcatError
         def message
           'Invalid HashCat runtime. Runtime must be an integer and greater or equal to 300.'
         end
       end
-      class InvalidMaskAttack < StandardError
+      class InvalidMaskAttack < RubyHashcatError
         def message
           'Invalid HashCat mask attack. You must specify a valid charset.'
         end
       end
-      class InvalidHybridAttack < StandardError
+      class InvalidHybridAttack < RubyHashcatError
         def message
           'Invalid HashCat hybrid attack. You must specify a valid charset and word list.'
         end
       end
-      class InvalidCombinationAttack < StandardError
+      class InvalidCombinationAttack < RubyHashcatError
         def message
           'Invalid HashCat combination attack. You must specify an array of 2 word lists.'
         end
       end
-      class HashIDAlreadyExists < StandardError
+      class HashIDAlreadyExists < RubyHashcatError
         def message
           'The ID you chose for this hash already exists. Please choose another.'
         end
+      end
+      class RubyHashcat::Objects::Hash::RubyHashcatError < StandardError
+
       end
 
       #########################
