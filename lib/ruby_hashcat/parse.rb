@@ -22,7 +22,10 @@ module RubyHashcat
       array = []
       return array unless File.exists?(file)
       placement = -1
-      string = File.tail(file, 30)
+      string = []
+      File.open(file).each_line do |x|
+        string << x
+      end
       string.each do |line|
         if line.include?('Session.Name.')
           placement += 1

@@ -8,55 +8,6 @@
 
 class File
   ###########################################################################
-  # @method                                                         tail(n) #
-  # @param n:                                     [Integer] Number of lines #
-  # @description                Implementation of tail for Ruby File class. #
-  # @return                        [Array] Array of last n lines of a file. #
-  ###########################################################################
-  def tail(n)
-    begin
-      buffer = 1024
-      idx = (size - buffer).abs
-      chunks = []
-      lines = 0
-
-      begin
-        seek(idx)
-        chunk = read(buffer)
-        lines += chunk.count("\n")
-        chunks.unshift chunk
-        idx -= buffer
-      end while lines < (n + 1) && pos != 0
-
-      tail_of_file = chunks.join('')
-      ary = tail_of_file.split(/\n/)
-      ary[ary.size - n, ary.size - 1]
-    rescue Errno::EINVAL => e
-      ary = []
-      each_line do |line|
-        ary << line
-      end
-      ary
-    end
-  end
-
-  ###########################################################################
-  # @method                                            File.tail(file, num) #
-  # @param file:                                      [String] Path of File #
-  # @param num:                                   [Integer] Number of lines #
-  # @description                Implementation of tail for Ruby File class. #
-  # @return                        [Array] Array of last n lines of a file. #
-  ###########################################################################
-  def self.tail(file, num=10)
-    arr = []
-    return arr unless File.exists?(file)
-    File.open(file) do |x|
-      arr = x.tail(num)
-    end
-    arr
-  end
-
-  ###########################################################################
   # @method                                                File.touch(file) #
   # @param file:                                      [String] Path of File #
   # @description               Implementation of touch for Ruby File class. #
