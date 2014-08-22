@@ -50,6 +50,8 @@ module RubyHashcat
           hc.charset = params[:charset]
         end
 
+        File.rename(params[:hash][:tempfile], hash)
+
         hc.hash = hash
         hc.word_list = word_list
         hc.type = type
