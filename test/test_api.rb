@@ -39,4 +39,39 @@ def normal
 
 end
 
-normal
+def charset
+  path = File.dirname(__FILE__)
+  attack = 3
+  hash = "#{path}/hashes/md5.txt"
+  charset = '?l?l?l?l?l?l?l?l'
+  type = 0
+
+  request = RestClient::Request.new(
+      :method => :post,
+      :url => '127.0.0.1:4567/crack.json',
+      :payload => {
+          multipart: true,
+          hash: File.new(hash, 'rb'),
+          charset: charset,
+          id: 2,
+          attack: attack,
+          type: type
+      }
+  )
+  response = request.execute
+
+  pp response
+
+  pp JSON.parse(RestClient.get '127.0.0.1:4567/status.json', {:params => {:id => 2}})
+
+  while JSON.parse(RestClient.get '127.0.0.1:4567/status.json', {:params => {:id => 2}})['status'] == 'running'
+    pp JSON.parse(RestClient.get '127.0.0.1:4567/status-advanced.json', {:params => {:id => 2}})
+    sleep 10
+  end
+
+  pp JSON.parse(RestClient.get '127.0.0.1:4567/results.json', {:params => {:id => 2}})
+
+end
+
+#normal
+charset

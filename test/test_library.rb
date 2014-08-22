@@ -23,7 +23,7 @@ def charset
   path = File.dirname(__FILE__)
   worker = RubyHashcat::Objects::Hash.new(2, '/home/ubuntu/tools/oclHashcat-1.01/cudaHashcat64.bin')
   worker.attack = 3
-  worker.hash = "#{path}/hashes/md5-tough.txt"
+  worker.hash = "#{path}/hashes/md5.txt"
   worker.charset = '?l?l?l?l?l?l?l?l'
   worker.type = 0
   worker.username = true
