@@ -19,7 +19,7 @@ module RubyHashcat
           return {:status => 'complete'}.to_json
         end
       rescue => e
-        return {:status => 'error'}.to_json
+        return {:status => 'error', :message => e.message}.to_json
       end
     end
 
@@ -37,7 +37,7 @@ module RubyHashcat
         end
         return {:status => hc.status}.to_json
       rescue => e
-        return {:status => 'error'}.to_json
+        return {:status => 'error', :message => e.message}.to_json
       end
     end
   end

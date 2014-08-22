@@ -15,10 +15,10 @@ module RubyHashcat
         if hc.running?
           return {:status => 'running'}.to_json
         else
-          return {:results => hc.results, :status => hc.status}.to_json
+          return {:results => hc.results}.to_json
         end
       rescue => e
-        return {:status => 'error'}.to_json
+        return {:status => 'error', :message => e.message}.to_json
       end
     end
   end
