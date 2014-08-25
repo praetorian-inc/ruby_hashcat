@@ -1,5 +1,5 @@
 path = File.dirname(__FILE__)
-require 'ruby_hashcat'
+require "#{path}/../lib/ruby_hashcat"
 
 worker = RubyHashcat::Program.new('/opt/cudaHashcat/cudaHashcat64.bin')
 
