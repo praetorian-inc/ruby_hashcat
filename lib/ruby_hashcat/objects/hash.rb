@@ -42,8 +42,11 @@ module RubyHashcat
           path = File.dirname(__FILE__)
 
           # Redirect standard output and errors for parsing
-          $stdout.reopen("#{path}/../tmp/#{@id}_output.txt", 'w')
-          $stderr.reopen("#{path}/../tmp/#{@id}_errors.txt", 'w')
+          tee_out = TeeIO.new($stdout, File.new("#{path}/../tmp/#{@id}_output.txt", 'w'))
+          $stdout = tee_out
+
+          tee_err = TeeIO.new($stderr, File.new("#{path}/../tmp/#{@id}_errors.txt", 'w'))
+          $stderr = tee_err
 
           # Create PID file for this hash ID
           File.touch("#{path}/../tmp/.hashcat_#{@id}_pid")
@@ -60,7 +63,7 @@ module RubyHashcat
             crack.outfile_format = 5
             # Status Output
             crack.status = true
-            crack.status_timer = 30
+            crack.status_timer = 15
 
             # Disable Restore and Pot File (not needed)
             crack.disable_restore = true
