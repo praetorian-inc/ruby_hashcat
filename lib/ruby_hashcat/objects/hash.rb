@@ -41,16 +41,18 @@ module RubyHashcat
         else
           path = File.dirname(__FILE__)
 
-          # Redirect standard output and errors for parsing
+          # Write standard output to a file without redirecting it.
           tee_out = TeeIO.new($stdout, File.new("#{path}/../tmp/#{@id}_output.txt", 'w'))
           $stdout = tee_out
 
+          # Write standard error to a file without redirecting it.
           tee_err = TeeIO.new($stderr, File.new("#{path}/../tmp/#{@id}_errors.txt", 'w'))
           $stderr = tee_err
 
           # Create PID file for this hash ID
           File.touch("#{path}/../tmp/.hashcat_#{@id}_pid")
 
+          # oclHashcat Object
           worker = RubyHashcat::Program.new(@ocl)
 
           # Start cracking with wrapper
@@ -78,13 +80,16 @@ module RubyHashcat
             # Contains Username
             crack.username = true if @username
 
+            # Combination Rules
             if @attack == 1
               crack.rule_left = @left_rule if @left_rule
               crack.rule_right = @right_rule if @right_rule
             end
 
+            # Attack Mode
             crack.attack_mode = @attack
 
+            # Hash
             crack.hash = @hash
 
             # Attack mode config
@@ -116,6 +121,7 @@ module RubyHashcat
 
           end
 
+          # Delete PID
           File.delete("#{path}/../tmp/.hashcat_#{@id}_pid") if File.exists?("#{path}/../tmp/.hashcat_#{@id}_pid")
         end
       end
