@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = 'ruby_hashcat'
   spec.version       = RubyHashcat::VERSION
   spec.authors       = ['Coleton Pierson']
-  spec.email         = ['coleton.pierson@praetorian.com']
+  spec.email         = ['coleton.pierson@gmail.com']
   spec.summary       = %q{Hashcat Library. Includes a rest API, library, and wrapper for oclHashcat.}
   spec.description   = %q{Hashcat library and API written in ruby to interface with oclHashcat.
                           Ability to start and check status of cracking hash files.}
-  spec.homepage      = 'http://praetorian.com'
+  spec.homepage      = 'https://github.com/coleton/ruby_hashcat'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
