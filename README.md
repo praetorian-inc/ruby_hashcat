@@ -18,7 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-Check out the test folder to see some examples of running a crack job.
+Interact with ruby_hashcat library:
+
+    RubyHashcat::Objects::Hash.new(1, '/path/to/hashcat/executable')
+
+Or start the API:
+
+    RubyHashcat.start_api('/path/to/hashcat/executable', debug)
+
+Or check out the test folder to see some of the examples.
 
 ## Contributing
 
