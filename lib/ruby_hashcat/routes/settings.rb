@@ -17,7 +17,7 @@ module RubyHashcat
         pp params
       end
 
-      list = Dir.entries("#{settings.ocl_location}/rules/")
+      list = Dir.entries("#{File.dirname(settings.ocl_location)}/rules/")
       list.delete('.')
       list.delete('..')
       {:rules => list}.to_json
