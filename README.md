@@ -1,5 +1,7 @@
 # RubyHashcat
 
+**Author:** Coleton Pierson (<coleton.pierson@praetorian.com>) -  [LinkedIn](https://www.linkedin.com/in/coletonp) | [Twitter](https://twitter.com/coletonp)
+
 Ruby wrapper created to run oclHashcat cracking jobs from inside of ruby. Initially created to integrate with a Rest API.
 
 ## Installation
